@@ -31,9 +31,11 @@ module.exports = {
   mode: process.env.NODE_ENV == 'production' ? 'production' : 'development',
 
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
     open: true,
-    writeToDisk: true,
+    static: path.resolve(__dirname, 'dist'),
+    devMiddleware: {
+      writeToDisk: true,
+    }
   },
 
   plugins: [
