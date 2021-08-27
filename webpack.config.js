@@ -24,18 +24,16 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].app.bundle.js',
+    filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
 
   mode: process.env.NODE_ENV == 'production' ? 'production' : 'development',
 
   devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    writeToDisk: true,
     open: true,
-    static: path.resolve(__dirname, 'dist'),
-    devMiddleware: {
-      writeToDisk: true,
-    }
   },
 
   plugins: [
@@ -46,6 +44,7 @@ module.exports = {
         },
         {
           from: 'assets/**/*',
+          noErrorOnMissing:  true
         },
       ],
     }),
