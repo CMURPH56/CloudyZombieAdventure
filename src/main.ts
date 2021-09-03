@@ -1,10 +1,11 @@
 import * as Phaser from 'phaser';
+import {BootScene} from './scenes/boot-scene';
 import { GameScene } from './scenes/gameScene';
 
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Cloudy Adventure Game',
-  scene: GameScene,
+  scene: [ BootScene, GameScene],
 
   type: Phaser.AUTO,
 
@@ -20,7 +21,6 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     },
   },
   parent: 'game',
-  backgroundColor: '#000000',
 };
 
 export const game = new Phaser.Game(gameConfig);

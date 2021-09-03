@@ -38,9 +38,24 @@ export class BootScene extends Phaser.Scene {
       },
       this
     );
-    
+    // load out package
     this.load.pack('preload', './assets/pack.json', 'preload')
   }
+
+  update(): void {
+    this.scene.start('MainMenuScene');
+  }
   
+  private createLoadingbar(): void {
+    this.loadingBar = this.add.graphics();
+    this.loadingBar.fillStyle(0x5dae47, 1);
+    this.loadingBar.fillRect(
+      this.cameras.main.width / 4 - 2,
+      this.cameras.main.height / 2 - 18,
+      this.cameras.main.width /  2 + 4,
+      20
+    );
+    this.progressBar = this.add.graphics();
+  }
 }
 
