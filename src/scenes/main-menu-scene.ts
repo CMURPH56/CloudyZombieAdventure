@@ -16,11 +16,12 @@ export class MainMenuScene extends Phaser.Scene {
   }
 
   create(): void {
+    console.log('Create Function in Main Menu Scene')
     this.titleBitmapText = this.add.bitmapText(
       0,
       200,
       'font',
-      'Cloudys Adventure Game',
+      'CLOUDYS ADVENTURE GAME',
       30
     );
     
