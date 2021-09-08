@@ -25,7 +25,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
       //physics
       this.scene.physics.world.enable(this);
-      this.body.setGravityY(1000);
+      this.body.setGravityY(0);
       this.body.setSize(17, 12);
 
    }

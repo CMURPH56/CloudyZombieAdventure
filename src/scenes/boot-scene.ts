@@ -11,8 +11,7 @@ export class BootScene extends Phaser.Scene {
   preload(): void {
 
     // set the background and create loading bar
-    this.cameras.main.setBackgroundColor(0x000000);
-
+    this.cameras.main.setBackgroundColor(0xFFFFFF);
 
     this.createLoadingbar();
 

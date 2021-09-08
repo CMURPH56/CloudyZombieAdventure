@@ -1,7 +1,8 @@
 import { Cloudy } from '../objects/cloudy'
 
 export class GameScene extends Phaser.Scene {
-  private background: Phaser.GameObjects.TileSprite;
+  private cloudy: Cloudy;
+
   constructor() {
     super({
       key: 'GameScene'
@@ -9,9 +10,12 @@ export class GameScene extends Phaser.Scene {
   }
 
   public create() {
-    this.background = this.add
-      .tileSprite(0, 0, 390, 600, 'background')
-      .setOrigin(0, 0)
+    this.cloudy = new Cloudy({
+      scene: this,
+      x: 50,
+      y: 100,
+      texture: 'cloudy'
+    });
   }
 
   public update() {
