@@ -9,12 +9,17 @@ export class GameScene extends Phaser.Scene {
     });
   }
 
+
+  preload(): void {
+
+  }
+
   public create() {
     this.cloudy = new Cloudy({
       scene: this,
       x: 50,
       y: 100,
-      texture: 'cloudy'
+      texture: 'bird'
     });
   }
 
