@@ -1,8 +1,8 @@
 export class BootScene extends Phaser.Scene {
   private loadingBar: Phaser.GameObjects.Graphics;
-  private progressBar: Phaser.GameObjects.Graphics; 
+  private progressBar: Phaser.GameObjects.Graphics;
   private background: Phaser.GameObjects.TileSprite;
-  
+
   constructor() {
     super({
       key: 'BootScene'
@@ -47,7 +47,7 @@ export class BootScene extends Phaser.Scene {
   update(): void {
     this.scene.start('MainMenuScene');
   }
-  
+
   private createLoadingbar(): void {
     this.loadingBar = this.add.graphics();
     this.loadingBar.fillStyle(0xFFA500, 1);

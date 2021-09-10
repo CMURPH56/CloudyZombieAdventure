@@ -16,8 +16,6 @@ export class Cloudy extends Phaser.GameObjects.Image {
    constructor(aParams: IImageConstructor){
       super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
 
-      console.log('logging texture on in the constructor')
-      console.log(aParams.texture)
       // image
       this.setScale(5);
       this.setOrigin(0, 0);

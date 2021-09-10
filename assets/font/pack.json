@@ -15,9 +15,10 @@
       },
       {
         "type": "image",
-        "key": "bird",
-        "url": "./assets/images/bird.png"
+        "key": "cloudy",
+        "url": "./assets/images/cloudy.png"
       },
+
       {
         "type": "spritesheet",
         "key": "pipe",
