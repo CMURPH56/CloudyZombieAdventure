@@ -15,8 +15,8 @@
       },
       {
         "type": "image",
-        "key": "cloudy",
-        "url": "./assets/images/cloudy.png"
+        "key": "bird",
+        "url": "./assets/images/bird.png"
       },
 
       {

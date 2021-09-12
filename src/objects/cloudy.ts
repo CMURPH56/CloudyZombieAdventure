@@ -4,6 +4,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
    body: Phaser.Physics.Arcade.Body;
 
    private isDead: boolean;
+   private isJumping: boolean;
 
    public getDead(): boolean {
       return this.isDead;
@@ -25,10 +26,15 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
       //physics
       this.scene.physics.world.enable(this);
-      this.body.setGravityY(0);
-      this.body.setSize(17, 12);
+      this.body.setSize(5, 7);
+      this.body.maxVelocity.x = 50;
+      this.body.maxVelocity.y = 300;
 
       this.scene.add.existing(this);
+   }
 
+
+   private initSprite() {
+      this.isJumping = false;
    }
 }
