@@ -22,6 +22,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     },
   },
   parent: 'game',
+  render: {pixelArt: true, antialias: false}
 };
 
 export const game = new Phaser.Game(gameConfig);

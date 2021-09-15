@@ -18,7 +18,11 @@
         "key": "bird",
         "url": "./assets/images/bird.png"
       },
-
+      {
+        "type": "image",
+        "key": "platform",
+        "url": "./assets/images/platform.png"
+      },
       {
         "type": "spritesheet",
         "key": "pipe",
