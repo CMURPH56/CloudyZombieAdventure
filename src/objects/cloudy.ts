@@ -3,9 +3,19 @@ import { IImageConstructor } from "../interfaces/image.interface";
 export class Cloudy extends Phaser.GameObjects.Image {
    body: Phaser.Physics.Arcade.Body;
 
+   // variables
    private isDead: boolean;
    private isJumping: boolean;
 
+   
+   // input
+   private keys: Map<string, Phaser.Input.Keyboard.Key>;
+
+   public getKeys(): Map<string, Phaser.Input.Keyboard.Key> {
+      return this.keys;
+   }
+   
+   
    public getDead(): boolean {
       return this.isDead;
    }
@@ -36,5 +46,10 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
    private initSprite() {
       this.isJumping = false;
+
+      // input
+      this.keys = new Map([
+         
+      ])
    }
 }
