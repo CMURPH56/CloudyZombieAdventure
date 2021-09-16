@@ -6,7 +6,9 @@ export class Cloudy extends Phaser.GameObjects.Image {
    // variables
    private isDead: boolean;
    private isJumping: boolean;
-
+   private currentScene: Phaser.Scene;
+   private acceleration: number;
+   private jumpAcceleration: number;
    
    // input
    private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -40,16 +42,41 @@ export class Cloudy extends Phaser.GameObjects.Image {
       this.body.maxVelocity.x = 50;
       this.body.maxVelocity.y = 300;
 
-      this.scene.add.existing(this);
-   }
 
+      this.currentScene = aParams.scene;
+      this.initSprite();
+      this.currentScene.add.existing(this);
+   }
 
    private initSprite() {
       this.isJumping = false;
+      this.acceleration = 500;
+      this.jumpAcceleration = -180;
 
       // input
       this.keys = new Map([
-         
+         ['LEFT', this.addKey('LEFT')],
+         ['RIGHT', this.addKey('RIGHT')],
+         ['JUMP', this.addKey('SPACE')]
       ])
+   }
+
+   private addKey(key: string): Phaser.Input.Keyboard.Key {
+      return this.currentScene.input.keyboard.addKey(key);
+   }
+
+   update(): void {
+      this.handleInput();
+   }
+
+   private handleInput() {
+      console.log('handle input is being called')
+      if (this.keys.get('RIGHT').isDown) {
+         this.body.setAccelerationX(this.acceleration);
+      } else if (this.keys.get('LEFT').isDown) {
+         this.body.setAccelerationX(-this.acceleration);
+      } else if (this.keys.get('JUMP').isDown) {
+         this.body.setVelocityY(this.jumpAcceleration);
+      }
    }
 }

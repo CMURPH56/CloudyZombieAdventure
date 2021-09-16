@@ -19,7 +19,6 @@ export class GameScene extends Phaser.Scene {
 
   public create(): void {
     
-    
     this.cloudy = new Cloudy({
       scene: this,
       x: 50,
@@ -33,19 +32,14 @@ export class GameScene extends Phaser.Scene {
         y: 500,
         texture: 'Platform'
     })
-
-    
-
     this.platforms = this.add.group({
       runChildUpdate: true
     })
-
     // Colliders
     this.physics.add.collider(this.cloudy, this.platform);
-
   }
 
   public update() {
-    // TODO
+    this.cloudy.update();
   }
 }
