@@ -39,7 +39,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
       //physics
       this.scene.physics.world.enable(this);
       this.body.setSize(5, 7);
-      this.body.maxVelocity.x = 50;
+      this.body.maxVelocity.x = 200;
       this.body.maxVelocity.y = 300;
 
 
@@ -57,7 +57,8 @@ export class Cloudy extends Phaser.GameObjects.Image {
       this.keys = new Map([
          ['LEFT', this.addKey('LEFT')],
          ['RIGHT', this.addKey('RIGHT')],
-         ['JUMP', this.addKey('SPACE')]
+         ['JUMP', this.addKey('SPACE')],
+         ['JUMP', this.addKey('UP')]
       ])
    }
 
@@ -70,13 +71,22 @@ export class Cloudy extends Phaser.GameObjects.Image {
    }
 
    private handleInput() {
-      console.log('handle input is being called')
+
+      // handle horizontal movement
       if (this.keys.get('RIGHT').isDown) {
          this.body.setAccelerationX(this.acceleration);
       } else if (this.keys.get('LEFT').isDown) {
          this.body.setAccelerationX(-this.acceleration);
-      } else if (this.keys.get('JUMP').isDown) {
-         this.body.setVelocityY(this.jumpAcceleration);
+      } else{
+         this.body.setVelocityX(0);
+         this.body.setAccelerationX(0);
       }
+
+      // handle jumping
+      if(this.keys.get('JUMP').isDown && !this.isJumping){
+         this.body.setVelocityY(-180);
+         this.isJumping = true;
+      }
+
    }
 }
