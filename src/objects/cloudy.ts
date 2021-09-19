@@ -9,6 +9,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
    private currentScene: Phaser.Scene;
    private acceleration: number;
    private jumpAcceleration: number;
+   private meow: Phaser.Sound.BaseSound
    
    // input
    private keys: Map<string, Phaser.Input.Keyboard.Key>;
@@ -46,6 +47,8 @@ export class Cloudy extends Phaser.GameObjects.Image {
       this.currentScene = aParams.scene;
       this.initSprite();
       this.currentScene.add.existing(this);
+
+      this.meow = new Phaser.Sound.BaseSound( new Phaser.Sound.BaseSoundManager( Phaser.Game), "meow")
    }
 
    private initSprite() {
@@ -58,7 +61,8 @@ export class Cloudy extends Phaser.GameObjects.Image {
          ['LEFT', this.addKey('LEFT')],
          ['RIGHT', this.addKey('RIGHT')],
          ['JUMP', this.addKey('SPACE')],
-         ['JUMP', this.addKey('UP')]
+         ['JUMP', this.addKey('UP')],
+         ['MEOW', this.addKey('M')]
       ])
    }
 
@@ -88,5 +92,9 @@ export class Cloudy extends Phaser.GameObjects.Image {
          this.isJumping = true;
       }
 
+      // Handle Audio
+      if(this.keys.get('MEOW').isDown){
+         console.log('meooow')
+      }      
    }
 }
