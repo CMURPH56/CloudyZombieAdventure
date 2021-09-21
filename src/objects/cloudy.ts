@@ -48,6 +48,8 @@ export class Cloudy extends Phaser.GameObjects.Image {
       this.initSprite();
       this.currentScene.add.existing(this);
 
+      this.meow = this.scene.sound.add('meow')
+
    }
 
    private initSprite() {
@@ -93,7 +95,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
       // Handle Audio
       if(this.keys.get('MEOW').isDown){
-         console.log('meooow')
+         this.meow.play();
       }      
    }
 }

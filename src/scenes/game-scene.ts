@@ -39,8 +39,6 @@ export class GameScene extends Phaser.Scene {
     // Colliders
     this.physics.add.collider(this.cloudy, this.platform);
 
-    this.meow = this.sound.add('meow');
-    this.meow.play();
   }
 
   public update() {
