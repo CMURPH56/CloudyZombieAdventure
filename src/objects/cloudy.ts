@@ -48,7 +48,6 @@ export class Cloudy extends Phaser.GameObjects.Image {
       this.initSprite();
       this.currentScene.add.existing(this);
 
-      this.meow = new Phaser.Sound.BaseSound( new Phaser.Sound.BaseSoundManager( Phaser.Game), "meow")
    }
 
    private initSprite() {

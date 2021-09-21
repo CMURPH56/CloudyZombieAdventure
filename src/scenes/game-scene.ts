@@ -5,6 +5,7 @@ export class GameScene extends Phaser.Scene {
   private cloudy: Cloudy;
   private platform: Platform
   private platforms: Phaser.GameObjects.Group;
+  private meow: Phaser.Sound.BaseSound;
 
   constructor() {
     super({
@@ -37,6 +38,9 @@ export class GameScene extends Phaser.Scene {
     })
     // Colliders
     this.physics.add.collider(this.cloudy, this.platform);
+
+    this.meow = this.sound.add('meow');
+    this.meow.play();
   }
 
   public update() {
