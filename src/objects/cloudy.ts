@@ -82,12 +82,17 @@ export class Cloudy extends Phaser.GameObjects.Image {
          this.body.setAccelerationX(this.acceleration);
       } else if (this.keys.get('LEFT').isDown) {
          this.body.setAccelerationX(-this.acceleration);
-      } else{
+      } else {
          this.body.setVelocityX(0);
          this.body.setAccelerationX(0);
       }
 
-      // handle jumping
+
+      if(this.body.onFloor()){
+         this.isJumping = false;
+      }
+
+      // Handle Jumping
       if(this.keys.get('JUMP').isDown && !this.isJumping){
          this.body.setVelocityY(-180);
          this.isJumping = true;
