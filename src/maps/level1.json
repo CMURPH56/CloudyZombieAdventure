@@ -1,0 +1,23 @@
+{
+  "height": 18,
+  "infinite": false,
+  "layers": [
+    {
+      "draworder": "topdown",
+      "name": "objects",
+      "objects" : [
+        {
+          "height": 5,
+          "id": 249,
+          "name": "platform",
+          "rotation": 0,
+          "type": "platform",
+          "visible": true,
+          "width": 24,
+          "x": 2280,
+          "y": 114
+        }
+      ]
+    }
+  ]
+}

@@ -87,7 +87,6 @@ export class Cloudy extends Phaser.GameObjects.Image {
          this.body.setAccelerationX(0);
       }
 
-
       if(this.body.onFloor()){
          this.isJumping = false;
       }
