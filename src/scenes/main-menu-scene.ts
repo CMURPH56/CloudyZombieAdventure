@@ -45,4 +45,8 @@ export class MainMenuScene extends Phaser.Scene {
   private getCenterXPositionOfBitmapText(width: number): number{
     return this.sys.canvas.width / 2 - width / 2;
   }
+
+  private initGlobalDataManager(): void {
+    this.registry.set('level', 'level1');
+  }
 }

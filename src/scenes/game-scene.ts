@@ -2,6 +2,8 @@ import { Cloudy } from '../objects/cloudy'
 import { Platform } from '../objects/platform'
 
 export class GameScene extends Phaser.Scene {
+  private map: Phaser.Tilemaps.Tilemap;
+  private tileSet: Phaser.Tilemaps.Tileset;
   private cloudy: Cloudy;
   private platform: Platform
   private platforms: Phaser.GameObjects.Group;
@@ -19,6 +21,13 @@ export class GameScene extends Phaser.Scene {
   }
 
   public create(): void {
+
+    // SETUP TILE MAP
+    
+    // create our tilemap from Tiled JSON
+    this.map = this.make.tilemap({key: this.registry.get('level')});
+    // add our tileset and layers to our tilemap
+    this.tileSet = this.map.addTilesetImage('tiles');
     
     this.cloudy = new Cloudy({
       scene: this,
