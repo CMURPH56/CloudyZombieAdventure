@@ -24,6 +24,11 @@
         "url": "./assets/images/platform.png"
       },
       {
+        "type": "image",
+        "key": "tiles",
+        "url": "./assets/tiles/tiles.png"
+      },
+      {
         "type": "spritesheet",
         "key": "pipe",
         "url": "./assets/sprites/pipe.png",
