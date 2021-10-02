@@ -41,6 +41,11 @@
         "type": "audio",
         "key": "meow",
         "url": "./assets/audio/meow.wav"
+      },
+      {
+        "type": "image",
+        "key": "tiles",
+        "url": "/assets/tiles/tiles.png"
       }
     ]
   }
