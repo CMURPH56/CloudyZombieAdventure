@@ -3,6 +3,11 @@
   "preload": {
     "files": [
       {
+         "type": "tilemapTiledJSON",
+         "key": "level1",
+         "url": "./assets/maps/level.json"
+      },
+      {
         "type": "bitmapFont",
         "key": "font",
         "textureURL": "./assets/font/font.png",
@@ -20,7 +25,7 @@
       },
       {
         "type": "image",
-        "key": "platform",
+        "key": " ",
         "url": "./assets/images/platform.png"
       },
       {
