@@ -29,9 +29,7 @@ export class GameScene extends Phaser.Scene {
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({key: 'level1'});
     
-    var objectLayer = this.map.getObjectLayer('objects')
-    
-    // this.loadObjectsFromMap();
+    this.loadObjectsFromMap();
 
     this.cloudy = new Cloudy({
         scene: this,
@@ -57,10 +55,9 @@ export class GameScene extends Phaser.Scene {
     this.cloudy.update();
   }
 
-
-  // private loadObjectsFromMap(): void {
-  //   // get the object layer in the tilemap named 'objects'
-  //   const objects = this.map.getObjectLayer('objects').objects as any[];
-  //   console.log(objects);
-  // }
+  private loadObjectsFromMap(): void {
+    // get the object layer in the tilemap named 'objects'
+    const objects = this.map.getObjectLayer('objects').objects as any[];
+    console.log(objects);
+  }
 }
