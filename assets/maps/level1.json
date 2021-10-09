@@ -20,5 +20,52 @@
       ]
     }
   ],
-  "orientation": "orthogonal"
+  "orientation": "orthogonal",
+  "tilesets": [
+    {
+      "columns": 16,
+      "firstgid": 1,
+      "image": "../tiles/tiles.png",
+      "imageheight": 176,
+      "imagewidth": 128,
+      "margin": 0,
+      "name": "tiles",
+      "spacing": 0,
+      "tilecount": 352,
+      "tileheight": 8,
+      "tileproperties": {
+        "100": {
+          "collide": true
+        },
+        "143": {
+          "collide": true
+        },
+        "16": {
+          "collide": true
+        },
+        "24": {
+          "collide": true
+        },
+        "32": {
+          "collide": true
+        },
+        "33": {
+          "collide": true
+        },
+        "54": {
+          "collide": true
+        },
+        "55": {
+          "collide": true
+        },
+        "70": {
+          "collide": true
+        },
+        "71": {
+          "collide": true
+        },
+        "84": {
+          "collide": true
+        }
+      },
 }
