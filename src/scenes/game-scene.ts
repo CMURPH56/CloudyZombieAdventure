@@ -25,11 +25,13 @@ export class GameScene extends Phaser.Scene {
   public create(): void {
 
     // SETUP TILE MAP
-    
+
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({key: 'level1'});
-    
-    this.loadObjectsFromMap();
+
+    console.log(this.map);
+
+    // this.loadObjectsFromMap();
 
     this.cloudy = new Cloudy({
         scene: this,

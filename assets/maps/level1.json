@@ -1,5 +1,5 @@
 {
-  "height": 18,
+  "height": 8,
   "infinite": false,
   "layers": [
     {
@@ -68,5 +68,9 @@
           "collide": true
         }
       }
-    }]
+    }],
+    "tilewidth": 8,
+    "type": "map",
+    "version": 1,
+    "width": 300
 }
