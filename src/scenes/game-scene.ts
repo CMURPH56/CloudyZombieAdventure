@@ -26,9 +26,12 @@ export class GameScene extends Phaser.Scene {
 
     // SETUP TILE MAP
 
+    console.log('first line in create function');
+
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({key: 'level1'});
 
+    console.log('before map create layer function')
 
     this.backgroundLayer = this.map.createLayer(
       'backgroundLayer',
@@ -45,7 +48,7 @@ export class GameScene extends Phaser.Scene {
     )
 
 
-    console.log(this.map);
+    console.log('after map create layer function');
 
     // this.loadObjectsFromMap();
 
