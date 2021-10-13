@@ -3,7 +3,7 @@ import { Platform } from '../objects/platform'
 
 export class GameScene extends Phaser.Scene {
   private map: Phaser.Tilemaps.Tilemap;
-  private tileSet: Phaser.Tilemaps.Tileset;
+  private tileset: Phaser.Tilemaps.Tileset;
   private cloudy: Cloudy;
   private platform: Platform;
   private backgroundLayer: Phaser.Tilemaps.TilemapLayer;
@@ -28,6 +28,22 @@ export class GameScene extends Phaser.Scene {
 
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({key: 'level1'});
+
+
+    this.backgroundLayer = this.map.createLayer(
+      'backgroundLayer',
+      this.tileset,
+      0,
+      0
+    );
+
+    this.foregroundLayer = this.map.createLayer(
+      'foregroundLayer',
+      this.tileset,
+      0,
+      0
+    )
+
 
     console.log(this.map);
 
