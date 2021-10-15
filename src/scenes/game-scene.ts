@@ -31,7 +31,6 @@ export class GameScene extends Phaser.Scene {
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({key: 'level1'});
 
-    console.log('before map create layer function')
 
     this.backgroundLayer = this.map.createLayer(
       'backgroundLayer',
@@ -47,29 +46,27 @@ export class GameScene extends Phaser.Scene {
       0
     )
 
+    // Game Objects
 
-    console.log('after map create layer function');
+
 
     // this.loadObjectsFromMap();
-
+    
     this.cloudy = new Cloudy({
-        scene: this,
-        x: 50,
-        y: 100,
-        texture: 'bird'
-      });
+      scene: this,
+      x: 50,
+      y: 100,
+      texture: 'bird'
+    });
+    
+    this.platforms = this.add.group({
+      runChildUpdate: true
+    })
+    // Colliders
+    this.physics.add.collider(this.cloudy, this.platform);
 
-      this.platform = new Platform({
-          scene: this,
-          x:  50,
-          y: 500,
-          texture: 'Platform'
-      })
-      this.platforms = this.add.group({
-        runChildUpdate: true
-      })
-      // Colliders
-      this.physics.add.collider(this.cloudy, this.platform);
+    console.log(this.map);
+
   }
 
   public update() {
