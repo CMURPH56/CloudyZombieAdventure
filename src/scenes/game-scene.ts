@@ -45,8 +45,6 @@ export class GameScene extends Phaser.Scene {
 
     // Game Objects
 
-
-
     this.loadObjectsFromMap();
     
     this.cloudy = new Cloudy({
@@ -71,6 +69,20 @@ export class GameScene extends Phaser.Scene {
   private loadObjectsFromMap(): void {
     // get the object layer in the tilemap named 'objects'
     const objects = this.map.getObjectLayer('objects').objects as any[];
-    console.log(objects);
+
+    objects.forEach((object) => {
+      if( object.type == "platform"){
+        this.platforms.add(
+          new Platform( {
+            scene: this,
+            x: object.x,
+            y: object.y,
+            texture: 'platform'
+          })
+        )
+        console.log('inside foreach loop')
+        console.log(object);
+      }
+    })
   }
 }
