@@ -43,6 +43,9 @@ export class GameScene extends Phaser.Scene {
       0
     )
 
+    this.platforms = this.add.group({
+      runChildUpdate: true
+    })
     // Game Objects
 
     this.loadObjectsFromMap();
@@ -54,9 +57,6 @@ export class GameScene extends Phaser.Scene {
       texture: 'bird'
     });
     
-    this.platforms = this.add.group({
-      runChildUpdate: true
-    })
     // Colliders
     this.physics.add.collider(this.cloudy, this.platform);
 
@@ -80,8 +80,6 @@ export class GameScene extends Phaser.Scene {
             texture: 'platform'
           })
         )
-        console.log('inside foreach loop')
-        console.log(object);
       }
     })
   }
