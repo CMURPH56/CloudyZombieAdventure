@@ -54,8 +54,8 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
    private initSprite() {
       this.isJumping = false;
-      this.acceleration = 500;
-      this.jumpAcceleration = -180;
+      this.acceleration = 360;
+      this.jumpAcceleration = -360;
 
       // input
       this.keys = new Map([
@@ -93,7 +93,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
       // Handle Jumping
       if(this.keys.get('JUMP').isDown && !this.isJumping){
-         this.body.setVelocityY(-180);
+         this.body.setVelocityY(-360);
          this.isJumping = true;
       }
 

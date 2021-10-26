@@ -54,7 +54,7 @@ export class GameScene extends Phaser.Scene {
       scene: this,
       x: 50,
       y: 100,
-      texture: 'bird'
+      texture: ""
     });
     
     // Colliders
