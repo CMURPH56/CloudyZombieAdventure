@@ -7,24 +7,24 @@
       "name": "objects",
       "objects" : [
         {
-          "height": 5,
+          "height": 20,
           "id": 249,
           "name": "platform1",
           "rotation": 0,
           "type": "platform",
           "visible": true,
-          "width": 24,
-          "x": 2280,
-          "y": 114
+          "width": 300,
+          "x": 400,
+          "y": 100
         },
         {
-          "height": 5,
+          "height": 20,
           "id": 249,
           "name": "platform2",
           "rotation": 0,
           "type": "platform",
           "visible": true,
-          "width": 24,
+          "width": 300,
           "x": 200,
           "y": 300
         }

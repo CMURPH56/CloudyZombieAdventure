@@ -77,7 +77,9 @@ export class GameScene extends Phaser.Scene {
             scene: this,
             x: object.x,
             y: object.y,
-            texture: 'platform'
+            texture: 'platform',
+            height: object.height,
+            width: object.width
           })
         )
       }

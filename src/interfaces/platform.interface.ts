@@ -4,4 +4,6 @@ export interface IPlatformConstructor {
   y: number;
   texture: string;
   frame?: string | number;
+  height?: number;
+  width?: number;
 }
