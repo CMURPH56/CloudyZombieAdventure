@@ -77,6 +77,11 @@ export class Cloudy extends Phaser.GameObjects.Image {
 
    private handleInput() {
 
+      if(this.isDead) {
+         this.currentScene.scene.stop("GameScene");
+         this.currentScene.scene.start("MainMenuScene");
+      }      
+
       // handle horizontal movement
       if (this.keys.get('RIGHT').isDown) {
          this.body.setAccelerationX(this.acceleration);
