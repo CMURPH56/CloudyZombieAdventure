@@ -100,6 +100,11 @@ export class Cloudy extends Phaser.GameObjects.Image {
       // Handle Audio
       if(this.keys.get('MEOW').isDown){
          this.meow.play();
-      }      
+      }
+      
+      // handle dying by fall
+      if(this.y > this.currentScene.sys.canvas.height){
+         this.isDead = true
+      }
    }
 }
