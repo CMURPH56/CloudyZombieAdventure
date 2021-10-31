@@ -63,7 +63,8 @@ export class Cloudy extends Phaser.GameObjects.Image {
          ['RIGHT', this.addKey('RIGHT')],
          ['JUMP', this.addKey('SPACE')],
          ['JUMP', this.addKey('UP')],
-         ['MEOW', this.addKey('M')]
+         ['MEOW', this.addKey('M')],
+         ['SCRATCH', this.addKey('S')]
       ])
    }
 
@@ -105,6 +106,11 @@ export class Cloudy extends Phaser.GameObjects.Image {
       // Handle Audio
       if(this.keys.get('MEOW').isDown){
          this.meow.play();
+      }
+
+      // Handle Scratch Attack
+      if(this.keys.get('SCRATCH').isDown){
+         console.log('SCRATCH ')
       }
       
       // handle dying by fall
