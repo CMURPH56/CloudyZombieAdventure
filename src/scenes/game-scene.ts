@@ -1,10 +1,12 @@
 import { Cloudy } from '../objects/cloudy'
+import { Couch } from '../objects/couch'
 import { Platform } from '../objects/platform'
 
 export class GameScene extends Phaser.Scene {
   private map: Phaser.Tilemaps.Tilemap;
   private tileset: Phaser.Tilemaps.Tileset;
   private cloudy: Cloudy;
+  private couch: Couch;  
   private platform: Platform;
   private backgroundLayer: Phaser.Tilemaps.TilemapLayer;
   private foregroundLayer: Phaser.Tilemaps.TilemapLayer;
@@ -56,9 +58,18 @@ export class GameScene extends Phaser.Scene {
       y: 100,
       texture: ""
     });
-    
+
+
+    this.couch = new Couch({
+      scene: this,
+      x: 500,
+      y: 100,
+      texture: ""
+    })
+
     // Colliders
     this.physics.add.collider(this.cloudy, this.platforms);
+    this.physics.add.collider(this.couch, this.platforms);
 
   }
 
