@@ -71,10 +71,21 @@ export class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.cloudy, this.platforms);
     this.physics.add.collider(this.couch, this.platforms);
 
+    this.physics.add.overlap(
+      this.cloudy,
+      this.couch,
+      this.handleCloudyCouchOverlap,
+      null,
+      this
+    )
   }
 
   public update() {
     this.cloudy.update();
+  }
+
+  private handleCloudyCouchOverlap( _cloudy: Cloudy, _couch: Couch) {
+    console.log('cloudy couch overlap')
   }
 
   private loadObjectsFromMap(): void {
