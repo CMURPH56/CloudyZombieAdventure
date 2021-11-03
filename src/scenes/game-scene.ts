@@ -86,6 +86,8 @@ export class GameScene extends Phaser.Scene {
 
   private handleCloudyCouchOverlap( _cloudy: Cloudy, _couch: Couch) {
     console.log('cloudy couch overlap')
+    this.scene.stop('GameScene');
+    this.scene.start('VictoryScene');
   }
 
   private loadObjectsFromMap(): void {

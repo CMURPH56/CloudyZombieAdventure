@@ -1,11 +1,12 @@
 import * as Phaser from 'phaser';
 import {BootScene} from './scenes/boot-scene';
 import { GameScene } from './scenes/game-scene';
+import { VictoryScene } from './scenes/victory-scene';
 import { MainMenuScene } from './scenes/main-menu-scene';
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Cloudy Adventure Game',
-  scene: [ BootScene, MainMenuScene, GameScene],
+  scene: [ BootScene, MainMenuScene, GameScene, VictoryScene],
 
   type: Phaser.AUTO,
 
