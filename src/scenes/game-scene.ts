@@ -26,10 +26,8 @@ export class GameScene extends Phaser.Scene {
 
   public create(): void {
 
-
     // create our tilemap from Tiled JSON
     this.map = this.make.tilemap({key: 'level1'});
-
 
     this.backgroundLayer = this.map.createLayer(
       'backgroundLayer',
@@ -48,16 +46,9 @@ export class GameScene extends Phaser.Scene {
     this.platforms = this.add.group({
       runChildUpdate: true
     })
-    // Game Objects
 
+    // Game Objects
     this.loadObjectsFromMap();
-    
-    this.cloudy = new Cloudy({
-      scene: this,
-      x: 50,
-      y: 100,
-      texture: "cloudy"
-    });
 
 
     this.couch = new Couch({
@@ -66,6 +57,13 @@ export class GameScene extends Phaser.Scene {
       y: 100,
       texture: "couch"
     })
+    
+    this.cloudy = new Cloudy({
+      scene: this,
+      x: 50,
+      y: 100,
+      texture: "cloudy"
+    });
 
     // Colliders
     this.physics.add.collider(this.cloudy, this.platforms);
