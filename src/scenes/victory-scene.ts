@@ -20,7 +20,6 @@ export class VictoryScene extends Phaser.Scene {
 
   create(): void {
 
-    console.log('victory scene is called')
     this.titleBitmapText = this.add.bitmapText(
       0,
       200,
@@ -39,6 +38,12 @@ export class VictoryScene extends Phaser.Scene {
       this.playBitmapText.width
     );
 
+  }
+
+  update(): void {
+    if(this.playAgainKey.isDown) {
+      this.scene.start('GameScene')
+    }
   }
 
   private getCenterXPositionOfBitmapText(width: number): number{

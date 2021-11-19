@@ -31,7 +31,7 @@ export class Cloudy extends Phaser.GameObjects.Image {
       super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
 
       // image
-      this.setScale(5);
+      this.setScale(.1);
       this.setOrigin(0, 0);
 
       //variables

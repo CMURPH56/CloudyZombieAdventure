@@ -56,7 +56,7 @@ export class GameScene extends Phaser.Scene {
       scene: this,
       x: 50,
       y: 100,
-      texture: ""
+      texture: "cloudy"
     });
 
 
@@ -64,7 +64,7 @@ export class GameScene extends Phaser.Scene {
       scene: this,
       x: 500,
       y: 100,
-      texture: ""
+      texture: "couch"
     })
 
     // Colliders

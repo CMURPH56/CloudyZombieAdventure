@@ -12,11 +12,11 @@ export class Couch extends Phaser.GameObjects.Image {
     super(aParams.scene, aParams.x, aParams.y, aParams.texture, aParams.frame);
 
     // image
-    this.setScale(5);
+    this.setScale(0.33);
     this.setOrigin(0, 0);
 
     this.scene.physics.world.enable(this);
-    this.body.setSize(5, 7);
+    this.body.setSize(12, 24);
 
     this.currentScene = aParams.scene;
 

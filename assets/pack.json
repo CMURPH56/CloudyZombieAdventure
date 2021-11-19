@@ -25,6 +25,17 @@
       },
       {
         "type": "image",
+        "key": "couch",
+        "url": "./assets/images/couch.png"
+      },
+
+      {
+        "type": "image",
+        "key": "cloudy",
+        "url": "./assets/images/cat.png"
+      },
+      {
+        "type": "image",
         "key": " ",
         "url": "./assets/images/platform.png"
       },
